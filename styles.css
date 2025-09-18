@@ -1,0 +1,130 @@
+/* Base layout & typography */
+body {
+	font-family: "Segoe UI", Arial, sans-serif;
+	line-height: 1.55;
+	background: #f5f7fa;
+	color: #222;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+/* Navigation overrides */
+header .navbar-brand {
+	letter-spacing: 0.5px;
+}
+header .nav-link.active {
+	font-weight: 600;
+	color: #0d6efd !important;
+}
+
+/* Project card styling */
+.project.card {
+	border: 1px solid rgba(0,0,0,0.08);
+	transition: transform .15s ease, box-shadow .15s ease;
+}
+.project.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 6px 18px -4px rgba(0,0,0,0.18);
+}
+
+/* Image aesthetics */
+img { 
+	border-radius: 8px; 
+}
+
+/* Links */
+a { 
+	text-decoration: none; 
+	color: #0d57b5; 
+}
+a:hover, a:focus { 
+	text-decoration: underline; 
+	color: #0a4289; 
+}
+
+/* Utility spacing refinement */
+main p { 
+	max-width: 60ch; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+	.display-5 { font-size: 2rem; }
+	main { padding-top: 1.5rem !important; }
+}
+
+/* Focus outline improvement for accessibility */
+a:focus-visible, button:focus-visible { 
+	outline: 3px solid #ffb703; 
+	outline-offset: 2px; 
+}
+
+/* Optional subtle gradient header */
+header { 
+	background: linear-gradient(90deg, #ffffff, #f0f4f9); 
+}
+
+/* Resume / experience refinements */
+section#experience-heading ul, section[aria-labelledby="experience-heading"] ul {
+  padding-left: 1.1rem;
+}
+section[aria-labelledby="experience-heading"] li { margin-bottom: 0.4rem; }
+
+/* Compact small headings */
+.h6.text-uppercase { letter-spacing: 0.5px; font-weight: 600; }
+
+/* Contact block tweaks */
+[aria-label="Contact information"] a { word-break: break-all; }
+
+/* Project card list spacing */
+.project.card ul { padding-left: 1.1rem; }
+.project.card li { margin-bottom: 0.35rem; }
+
+/* Carousel sizing tweaks */
+#uvsaCarousel .carousel-item img {
+	max-height: 260px; /* adjust this value to make smaller/larger */
+	object-fit: cover;
+	object-position: center top;
+}
+
+@media (min-width: 992px) {
+	#uvsaCarousel .carousel-item img { max-height: 300px; }
+}
+
+/* Side-by-side project layout image containment */
+.project-img-contain {
+	max-height: 260px;
+	width: 100%;
+	object-fit: contain; /* show full image without cropping */
+	background: #fff;
+	padding: .25rem;
+	border: 1px solid rgba(0,0,0,0.08);
+	border-radius: .5rem;
+}
+@media (min-width: 992px) {
+	.project-img-contain { max-height: 300px; }
+}
+
+/* Remove previous crop style for UVSA carousel within new layout */
+#uvsaCarousel .carousel-item img.project-img-contain {
+	max-height: 260px;
+	object-fit: contain;
+	object-position: center center;
+}
+
+/* UVSA media column styling (only the image/slider area is blue) */
+.uvsa-media-col {
+  background: linear-gradient(135deg, #002d62, #004b8d);
+  border-right: 1px solid rgba(0,0,0,0.08);
+  border-top-left-radius: .5rem;
+  border-bottom-left-radius: .5rem;
+}
+#uvsaCarousel .carousel-control-prev-icon,
+#uvsaCarousel .carousel-control-next-icon { filter: invert(1) brightness(1.3); }
+#uvsaCarousel .carousel-inner { border-radius: .35rem; }
+#uvsaCarousel .carousel-item img { background: #fff; }
